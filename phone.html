@@ -1,0 +1,73 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>phone hunter api</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.3/dist/full.css"
+      rel="stylesheet"
+      type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <style>
+    .phone-name {
+      font-size: 16px;
+    }
+    .img-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+  </style>
+  <body>
+    <header>
+      <h1 class="text-3xl text-center mt-10">Phone Hunter API</h1>
+    </header>
+    <section class="text-center mt-10">
+      <input
+        id="input-field"
+        type="text"
+        placeholder="Search..."
+        class="input input-bordered w-full max-w-xs" />
+      <button onclick="handler()" class="btn btn-accent text-white">
+        Search
+      </button>
+    </section>
+    <section>
+      <!-- loading spinner -->
+      <div id="toggleSpinner" class="text-center mt-10 hidden">
+        <span class="loading loading-spinner loading-lg"></span>
+      </div>
+      <!-- Show all detail btn -->
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="show_all_model" class="modal modal-bottom sm:modal-middle">
+        <form method="dialog" class="modal-box">
+          <div id="show-all-details-container"></div>
+          <div class="modal-action">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </div>
+        </form>
+      </dialog>
+      <main class="max-w-screen-xl mx-auto">
+        <div
+          id="card-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10"></div>
+      </main>
+      <div class="text-center my-20">
+        <button
+          onclick="showAllBtn()"
+          id="hidden-btn"
+          class="btn btn-secondary hidden">
+          show all
+        </button>
+      </div>
+    </section>
+    <footer></footer>
+    <script src="phone.js"></script>
+  </body>
+</html>
